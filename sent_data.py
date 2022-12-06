@@ -81,10 +81,11 @@ def get_city_data(city_name):
 
 
 def get_weather_and_air(longitude, latitude):
-    api_key = "3b5f528592454cccb530f76b4c0f0fd5"
+    weather_api_key = "3b5f528592454cccb530f76b4c0f0fd5"
+    air_api_key = "1a409a4d6dfb4b4093c20517eb90f8f4"
     weather_url = "https://devapi.qweather.com/v7/weather/now?location={},{}&key={}".format(longitude, latitude,
-                                                                                            api_key)
-    air_url = "https://devapi.qweather.com/v7/air/now?location={},{}&key={}".format(longitude, latitude, api_key)
+                                                                                            weather_api_key)
+    air_url = "https://devapi.qweather.com/v7/air/now?location={},{}&key={}".format(longitude, latitude, air_api_key)
     weather_data = requests.get(weather_url).json()
     # print(weather_data)
     air_data = requests.get(air_url).json()

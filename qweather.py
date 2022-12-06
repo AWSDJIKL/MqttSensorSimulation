@@ -29,17 +29,17 @@ def get_weather_and_air(longitude, latitude):
     }
 
 
-if __name__ == '__main__':
+# if __name__ == '__main__':
     # get_weather_and_air(113.5, 22.2)
-    device_data = pd.read_csv("device_data.csv")
-    api_key = "3b5f528592454cccb530f76b4c0f0fd5"
-    for index, row in device_data.iterrows():
-        city_name = row["device_name"]
-        city_url = "https://geoapi.qweather.com/v2/city/lookup?location={}&key={}".format(city_name, api_key)
-        data = requests.get(city_url).json()
-        print(city_name)
-        print(data)
-        print("latitude:", data["location"][0]["lat"])
-        print("longitude:", data["location"][0]["lat"])
-        device_data.loc[index, "latitude"] = data["location"][0]["lat"]
-        device_data.loc[index, "longitude"] = data["location"][0]["lon"]
+    # device_data = pd.read_csv("device_data.csv")
+    # api_key = "3b5f528592454cccb530f76b4c0f0fd5"
+    # for index, row in device_data.iterrows():
+    #     city_name = row["device_name"]
+    #     city_url = "https://geoapi.qweather.com/v2/city/lookup?location={}&key={}".format(city_name, api_key)
+    #     data = requests.get(city_url).json()
+    #     print(city_name)
+    #     print(data)
+    #     print("latitude:", data["location"][0]["lat"])
+    #     print("longitude:", data["location"][0]["lat"])
+    #     device_data.loc[index, "latitude"] = data["location"][0]["lat"]
+    #     device_data.loc[index, "longitude"] = data["location"][0]["lon"]
